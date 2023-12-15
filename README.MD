@@ -1,6 +1,9 @@
 # Advent of Code 2023
 These are my scripts for the puzzles at https://adventofcode.com/2023 I will be uploading all days that I solve with a short commentary on thought process/description. All the puzzles (so far) have been solved without looking up any hint related to the event. Note that my naming process for the input texts is input + the date. So for the first day it was input1.txt, the second day input2.txt... etc.
 
+## Day 4
+Part 1 is just comparing lists and finding matches. For each match you multiply the value of the card by 2 (or set it to 1 if it was 0), then you add all the values of the cards. Part 2 is much more confusing now instead of increasing the value of the cards, matches increase the number of future cards you get. The way I solved it was by using a list of the multiplicities of each card that I had and increased that number according to the instructions. So if card 6 had multiplicity 5 (i.e. I had 5 total copies of card 6) and card 6 had 7 matches then I added 5 to the multiplicity of cards 7 8 9 10 11 12 13.
+
 ## Day 5 
 Day 5 was one of my favorites and one of the most difficult. Part 1 was a bit of a hurdle writing all the mappings. The key is figuring out that each mapping (for the range that it operates on) is just adding the difference of the beginning of the image (where it takes you) of the map with the beginning of the domain (where it came from). Part 2 was much more difficult, in principle it was the same logic as part one, however, the number of seeds now was huge since instead of individual seeds they were now ranges of seeds.  Computing them 1 by 1 was not an option. The way I solved it was that instead of operating with the maps on the seeds individually, I operated on the ranges. So I proccessed each range through the maps, splitting it accordingly at the map borders and it turned out pretty nice. Code was pretty tedious to write but it runs almost insantly so I am very happy with the result.
 

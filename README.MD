@@ -1,6 +1,9 @@
 # Advent of Code 2023
 These are my scripts for the puzzles at https://adventofcode.com/2023 I will be uploading all days that I solve with a short commentary on thought process/description. All the puzzles (so far) have been solved without looking up any hint related to the event. Note that my naming process for the input texts is input + the date. So for the first day it was input1.txt, the second day input2.txt... etc.
 
+## Day 1
+There is not much to say about part 1, you just iterate through each line forward or backwards and pick the first number you see then concatentate them and sum all those for each line. For part 2, it's a bit trickier since there are numbers spelled out. A first idea is to replace the spelling of the number with the number itself (for example replace "two" with "2") which could work but there are issues. The main issue is when two spelled out numbers share a letter (like "eightwo") here if you replace the "eight" it will be "8wo" but then you lost the "two". The safest way to do it is to replace each spelled out number with the number but also the first and last letter of the spelled out number. For example "one" is replaced by "o1e", "two" by "t2o", "three" by "t3e"... etc. No spelled out number combinations share more than one letter so this is enough.
+
 ## Day 4
 Part 1 is just comparing lists and finding matches. For each match you multiply the value of the card by 2 (or set it to 1 if it was 0), then you add all the values of the cards. Part 2 is much more confusing now instead of increasing the value of the cards, matches increase the number of future cards you get. The way I solved it was by using a list of the multiplicities of each card that I had and increased that number according to the instructions. So if card 6 had multiplicity 5 (i.e. I had 5 total copies of card 6) and card 6 had 7 matches then I added 5 to the multiplicity of cards 7 8 9 10 11 12 13.
 

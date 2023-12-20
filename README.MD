@@ -24,3 +24,6 @@ Day 14 was interesting, the first part was pretty easy, we just have to check fo
 
 ## Day 15
 Day 15 was pretty easy, the first part is just applying some hash algorithm. The second part was confusing to read but it's pretty clear from the description that we are supposed to use dictionaries which make the puzzle pretty easy.
+
+## Day 19
+Day 19 was very interesting. Part 1 was just translating the commands of the input into commands in code. To solve it I used a nested function which terminated when the configuration was accepted or rejected. Part 2 is where it gets interesting. Here we had to figure out the configuration space of the parameters that are accepted. To do this I used a similar function to part 1 but instead of a single configuration it uses ranges of configurations as input. When it hits an instruction (such as an inequality), the range splits and the function is called again with the new range. If finally some range gets accepted then the size of the configuration space is added to the sum.
